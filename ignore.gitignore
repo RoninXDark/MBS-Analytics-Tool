@@ -1,0 +1,20 @@
+# Ігнорувати системні папки IDE
+.idea/
+.vscode/
+__pycache__/
+
+# Ігнорувати папки збірки EXE
+build/
+dist/
+*.spec
+
+# Ігнорувати файли даних клієнта (КРИТИЧНО!)
+*.xlsx
+*.csv
+*.xls
+
+# Ігнорувати результати роботи програми
+MBS_PRICES_OUTPUT/
+MBS_GENERAL_OUTPUT/
+MBS_SPREADS/
+MBS_RESIDUALS_OUTPUT/
