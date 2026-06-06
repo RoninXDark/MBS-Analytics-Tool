@@ -1,0 +1,6 @@
+# Keep accidental generated artifacts out of GitHub language stats.
+*.html linguist-generated=true
+*.tex linguist-generated=true
+*.log linguist-generated=true
+build/** linguist-generated=true
+dist/** linguist-generated=true

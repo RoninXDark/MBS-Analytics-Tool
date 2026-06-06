@@ -1,0 +1,52 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE/editor files
+.idea/
+.vscode/
+*.swp
+
+# Local environment and secrets
+.env
+.env.*
+
+# Build/package outputs
+build/
+dist/
+*.exe
+*.msi
+*.spec
+
+# Runtime outputs and logs
+logs/
+output/
+runtime/
+*.log
+*.tmp
+*.bak
+
+# Analyst/client exports
+*.xlsx
+*.xls
+*.csv
+!examples/*.csv
+!sample_data/*.csv
+
+# Generated reports/charts
+MBS_PRICES_OUTPUT/
+MBS_GENERAL_OUTPUT/
+MBS_SPREADS/
+MBS_RESIDUALS_OUTPUT/
+REPORT_*.xlsx
+
+# Windows/Excel noise
+~$*
+Thumbs.db
+.DS_Store
