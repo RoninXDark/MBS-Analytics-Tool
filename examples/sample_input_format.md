@@ -1,33 +1,56 @@
 # Sample Input Format
 
-MBS Analytics Tool supports Bloomberg-style wide files and residual history files.
+The tool supports both a canonical long format and Bloomberg-style wide exports.
 
-## Price / OAS Wide Format
+## Canonical Long Format
 
-A typical file has one security identifier column and many date columns.
+Use this format when each row already represents one observation for one bond/story/date.
+
+Required or commonly used columns:
+
+| Column | Example | Notes |
+| --- | --- | --- |
+| `date` | `2026-04-19` | Observation date. |
+| `story` | `2023 FNCL 5.0 NY` | Human-readable bond/story label. |
+| `story_bucket` | `FNCL` | Program or story family. |
+| `geo` | `NY` | Geography/state bucket. |
+| `coupon` | `5.0` | Coupon bucket. |
+| `year` | `2023` | Vintage/origination year. |
+| `can` | `1.42` | Z-score/CAN-style metric when available. |
+| `payup` | `0.35` | Payup metric used in ranking and charting. |
+| `spread` | `45.0` | Spread or relative-value metric. |
+| `issuer` | `FNCL` | Issuer/program label. |
+
+Minimal CSV example:
 
 ```csv
-Bond,2026-01-05,2026-01-12,2026-01-19
+date,story,story_bucket,geo,coupon,year,can,payup,spread,issuer
+2026-04-19,2023 FNCL 5.0 NY,FNCL,NY,5.0,2023,1.42,0.35,45.0,FNCL
+2026-04-26,2023 FNCL 5.0 NY,FNCL,NY,5.0,2023,1.31,0.31,43.0,FNCL
+```
+
+## Bloomberg-Style Wide Format
+
+Wide files are supported when dates appear as column headers and rows represent bonds/stories. The normalizer detects date-like headers, melts the data into long format, and then parses story dimensions such as program, geography, coupon, and vintage where possible.
+
+Example shape:
+
+```csv
+Bond,2026-04-19,2026-04-26,2026-05-03
 2023 FNCL 5.0 NY,100-163,100-181,100-195
 2023 FNCL 5.0 FL,100-097,100-112,100-128
-2024 FNCL 4.5 TX,99-28+,100-002,100-041
 ```
 
-The loader scans the first rows to find date-like headers, then uses the strongest text column as the bond/security identifier.
+## MBS Price Notation
 
-## Residuals Format
+The foundation workflows support MBS 32nds-style prices such as:
 
-Residual workflows need bond names, dates, and a residual metric column.
+- `100-16`
+- `100-163`
+- `99-287`
 
-```csv
-Bond,Date,Residual
-2023 FNCL 5.0 NY,2026-01-05,0-04+
-2023 FNCL 5.0 NY,2026-01-12,0-03
-2023 FNCL 5.0 FL,2026-01-12,-0-02
-```
+These are parsed into decimal prices for charting and spread calculations, then formatted back into market-readable notation where needed.
 
-The residual report ranks the richest and cheapest securities and writes an Excel workbook plus charts.
+## Privacy Note
 
-## Privacy
-
-Do not commit real Bloomberg exports, client workbooks, generated charts, or reports. Keep only small anonymized examples in `examples/`.
+Do not commit client workbooks, Bloomberg exports, generated Excel reports, or production saved configs. Keep only small anonymized samples in `sample_data/` or documentation examples in `examples/`.

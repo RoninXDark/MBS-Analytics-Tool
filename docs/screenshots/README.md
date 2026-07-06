@@ -1,10 +1,12 @@
 # Screenshots
 
-Add portfolio screenshots here after masking sensitive data.
+Place portfolio screenshots here if you want GitHub visitors to understand the desktop workflow quickly.
 
 Recommended screenshots:
 
-- Main desktop app with tabs visible.
-- Price history chart output.
-- Spread calculator output.
-- Residual rich/cheap report preview.
+- Main Tkinter desktop dashboard.
+- File loading / automation configuration screen.
+- Generated chart package preview.
+- BUY/SELL Excel report preview with sensitive values anonymized.
+
+Do not include client names, proprietary bond lists, or private workbook paths.

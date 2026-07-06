@@ -1,0 +1,30 @@
+﻿default_metric: can
+ranking_metrics:
+  - z_score_can
+  - payup
+report_frequency: weekly
+best_n: 5
+worst_n: 5
+rank_by: z_score_can
+output_options:
+  generate_excel_stats: true
+  generate_individual_charts: true
+  generate_versus_charts: true
+figsize:
+  width: 12
+  height: 6
+chart_style:
+  line_width: 2.5
+filters:
+  years: [2023, 2024, 2025, 2026]
+  geos: []
+  coupons: []
+weekly_rollup:
+  period: W-FRI
+automation:
+  coupon_pack_min_coupons: 2
+  year_pack_min_years: 2
+  geo_pair_min_points: 4
+  max_coupon_pack_charts: 250
+  max_year_pack_charts: 250
+  max_geo_pairs: 200

@@ -8,6 +8,13 @@ __pycache__/
 venv/
 env/
 
+# Test/type/lint caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
 # IDE/editor files
 .idea/
 .vscode/
@@ -16,35 +23,32 @@ env/
 # Local environment and secrets
 .env
 .env.*
+!.env.example
 
-# Build/package outputs
+# Build and packaging outputs
 build/
 dist/
+dist_beta/
 *.exe
 *.msi
-*.spec
 
-# Runtime outputs and logs
+# Runtime outputs
 logs/
 output/
 runtime/
 *.log
 *.tmp
 *.bak
+_audit_output/
+_tmp_phase5_scan/
+.tmp_pytest_run/
 
-# Analyst/client exports
+# Analyst/client data exports
 *.xlsx
 *.xls
 *.csv
-!examples/*.csv
 !sample_data/*.csv
-
-# Generated reports/charts
-MBS_PRICES_OUTPUT/
-MBS_GENERAL_OUTPUT/
-MBS_SPREADS/
-MBS_RESIDUALS_OUTPUT/
-REPORT_*.xlsx
+!examples/*.csv
 
 # Windows/Excel noise
 ~$*

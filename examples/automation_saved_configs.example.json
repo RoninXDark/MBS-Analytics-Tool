@@ -1,0 +1,31 @@
+{
+  "configs": {
+    "Nightly BUY SELL Ideas": {
+      "workflow": "idea_scan",
+      "input_mode": "latest_file",
+      "input_dir": "D:/MBS_Nightly_Input",
+      "input_pattern": "*.xlsx",
+      "output_dir": "output/overnight_ideas",
+      "ranking_method": "z_score",
+      "top_n": 10,
+      "use_default_focus": true,
+      "include_full_chart_history": true,
+      "min_observations": 50,
+      "package_name": null,
+      "filters": {
+        "programs": [],
+        "geographies": [],
+        "loan_balance_buckets": [],
+        "coupons": [],
+        "origination_years": [],
+        "origination_year_min": 2019,
+        "origination_year_max": null,
+        "story_families": [],
+        "story_tags": [],
+        "raw_story_names": []
+      },
+      "include_parse_failures": true,
+      "gui_schema_version": 2
+    }
+  }
+}

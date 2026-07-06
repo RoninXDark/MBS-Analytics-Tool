@@ -1,0 +1,19 @@
+﻿weekly_reports:
+  - name: story_summary_with_zscores
+    mode: table
+    description: Low/high/mean and Z-score statistics for all stories.
+  - name: zscore_top_vs_bottom
+    mode: zscore
+    description: Time-series pack for best/cheapest and worst/richest stories by Z-score.
+  - name: payup_top_vs_bottom
+    mode: payup
+    description: Time-series pack for best/cheapest and worst/richest stories by Payup.
+  - name: coupon_packs
+    mode: payup_coupon
+    description: Weekly payup charts by coupon for every story bucket and year.
+  - name: year_packs
+    mode: payup_year
+    description: Weekly payup charts by year for every story bucket and coupon.
+  - name: geo_pairs
+    mode: payup_geo
+    description: Weekly geo-vs-geo comparison charts for matched bucket/year/coupon sets.

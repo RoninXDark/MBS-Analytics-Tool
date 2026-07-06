@@ -1,0 +1,51 @@
+{
+  "configs": {
+    "Nightly Payup Curves": {
+      "workflow": "payup_curve_pack",
+      "input_mode": "latest_file",
+      "input_dir": "D:/MBS_Nightly_Input",
+      "input_pattern": "*.xlsx",
+      "output_dir": "output/canned_reports",
+      "report_name": "Nightly Payup Curves",
+      "max_charts_per_request": 50,
+      "max_total_charts": 250,
+      "max_series_per_chart": 50,
+      "chart_requests": [
+        {
+          "name": "LB125 2022 All Coupons",
+          "chart_type": "time_series",
+          "programs": ["FNCL"],
+          "loan_balance_buckets": ["LB125"],
+          "origination_years": [2022],
+          "coupons": "all"
+        },
+        {
+          "name": "LB225 1.5 Through 7.0 Snapshot",
+          "chart_type": "latest_snapshot_curve",
+          "programs": ["FNCL"],
+          "loan_balance_buckets": ["LB225"],
+          "origination_years": [2022],
+          "coupon_min": 1.5,
+          "coupon_max": 7.0
+        },
+        {
+          "name": "NY Coupon Curve",
+          "chart_type": "latest_snapshot_curve",
+          "programs": ["FNCL"],
+          "geographies": ["NY"],
+          "origination_years": [2022],
+          "coupon_min": 1.5,
+          "coupon_max": 7.0
+        },
+        {
+          "name": "LTV Time Series",
+          "chart_type": "time_series",
+          "programs": ["FNCL"],
+          "origination_years": [2022],
+          "coupons": "all",
+          "story_tags": ["LTV"]
+        }
+      ]
+    }
+  }
+}
