@@ -2,7 +2,7 @@
 
 Desktop Python application for analyzing Mortgage-Backed Securities data from Bloomberg-style Excel/CSV files.
 
-This project is positioned as a practical analyst workflow tool, not a toy demo: it ingests MBS datasets, normalizes bond/story fields, generates charts and rankings, and produces Excel reports for repeatable rich/cheap analysis.
+It turns analyst exports into normalized datasets, charts, ranked screening results, and repeatable Excel report packages. A desktop interface supports interactive analysis, while CLI commands support scheduled reporting.
 
 ## Business Problem
 
